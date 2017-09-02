@@ -16,11 +16,33 @@ JavaScript utility that provides a common interface in communicating with Google
 
 ## Description
 
-This library is to act as a common interface to allow us to save, retrieve, and update arbitrary files from a cloud service. The library, when ran in development mode
+This library is to act as a common interface to allow us to save, retrieve, and update arbitrary files from a cloud service.
 
 ## Usage
 
-Information about how to use the service or library.
+### Installing
+```
+npm install siggame/stockage#stable
+```
+
+### Using Local Stockage
+```typescript
+// Importing
+import * as stockage from "stockage";
+
+// New instance
+const stock = new stockage.LocalStockage();
+
+// Writing data
+const id = await stock.write("Hello, World");
+const id = await stock.writeBuffer(buffer);
+const id = await stock.writeJSON({hello: "world"});
+
+// Reading data
+const data = await stock.read(id);
+const data = await stock.readBuffer(id);
+const data = await stock.readJSON(id);
+```
 
 ## Contributors
 - [Russley Shaw](https://github.com/russleyshaw)
