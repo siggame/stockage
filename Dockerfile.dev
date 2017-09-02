@@ -1,0 +1,10 @@
+FROM node:latest
+LABEL maintainer="siggame@mst.edu"
+
+ADD . stockage
+WORKDIR stockage
+
+RUN npm run setup
+RUN npm run build
+
+CMD ["echo", "Finished!"]

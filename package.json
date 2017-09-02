@@ -1,0 +1,42 @@
+{
+  "name": "stockage",
+  "version": "1.0.0",
+  "description": "JavaScript utility that provides a common interface in communicating with Google Storage, AWS S3, and local storage.",
+  "main": "dist/index.js",
+  "dependencies": {
+    "fs-extra": "^4.0.1",
+    "lodash": "^4.17.4",
+    "typescript": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/fs-extra": "^4.0.1",
+    "@types/lodash": "^4.14.74",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.26",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build-dist": "tsc -p tsconfig.dist.json",
+    "build-watch": "tsc --watch",
+    "test": "npm run build && mocha test/unit/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siggame/stockage.git"
+  },
+  "keywords": [
+    "typescript",
+    "aws-s3",
+    "google-storage",
+    "nodejs"
+  ],
+  "author": "Russley Shaw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/siggame/stockage/issues"
+  },
+  "homepage": "https://github.com/siggame/stockage#readme"
+}

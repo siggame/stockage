@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_script:
+  - docker build --tag development --file Dockerfile.dev .
+
+script:
+  - docker run development npm run test
