@@ -1,12 +1,13 @@
 {
-  "name": "stockage",
-  "version": "1.0.0",
+  "name": "@siggame/stockage",
+  "version": "0.1.0",
   "description": "JavaScript utility that provides a common interface in communicating with Google Storage, AWS S3, and local storage.",
-  "main": "dist/index.js",
+  "main": "dist/index",
+  "types": "dist/index",
   "dependencies": {
     "fs-extra": "^4.0.1",
     "lodash": "^4.17.4",
-    "typescript": "^2.4.2"
+    "typescript": "^2.5.2"
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",
@@ -21,7 +22,11 @@
     "build": "tsc",
     "build-dist": "tsc -p tsconfig.dist.json",
     "build-watch": "tsc --watch",
-    "test": "npm run build && mocha test/unit/"
+    "test": "npm run build && mocha test/unit/",
+    "clean": "npm run clean:src && npm run clean:test && npm run clean:misc",
+    "clean:src": "rm -rf src/**/*.js src/*.js",
+    "clean:test": "rm -rf test/**/*.js test/*.js",
+    "clean:misc": "rm -rf node_modules/ dist/ docs/"
   },
   "repository": {
     "type": "git",
